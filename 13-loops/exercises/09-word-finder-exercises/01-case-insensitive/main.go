@@ -8,6 +8,11 @@
 
 package main
 
+import (
+	"fmt"
+	"strings"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Case Insensitive Search
 //
@@ -24,5 +29,16 @@ package main
 //  the "lazy" keyword.
 // ---------------------------------------------------------
 
+const matchString = "lazy"
+
 func main() {
+
+	const word = "laZy"
+
+	if strings.ToLower(word) == matchString {
+		fmt.Printf("Congratulations you find the word")
+		return
+	}
+
+	fmt.Printf("fail you dont find the word")
 }

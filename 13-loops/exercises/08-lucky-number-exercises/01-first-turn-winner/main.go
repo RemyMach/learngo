@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: First Turn Winner
 //
@@ -26,4 +32,22 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+
+	guess := 6
+	turn := 0
+	for {
+		rand.Seed(time.Now().UnixNano())
+
+		value := rand.Intn(10)
+
+		if (turn == 0 && value == guess) {
+			fmt.Printf("Congratulations you are the best")
+			return
+		} else if value == guess {
+			fmt.Printf("Congratulations you find at turn %d", turn+1)
+			return
+		}
+
+		turn++
+	}
 }

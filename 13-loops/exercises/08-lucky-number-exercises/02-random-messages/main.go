@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Random Messages
 //
@@ -35,4 +41,18 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+
+	sentencesWin := []string{"YOU WON", "YOU'RE AWESOME"}
+	sentencesLost := []string{"LOSER!", "YOU LOST. TRY AGAIN?"}
+	rand.Seed(time.Now().UnixNano())
+	indexRandom := rand.Intn(2)
+	winOrLost := rand.Intn(2)
+	switch winOrLost {
+	case 0:
+		fmt.Printf("%s", sentencesWin[indexRandom])
+	case 1:
+		fmt.Printf("%s", sentencesLost[indexRandom])
+
+	}
+
 }
