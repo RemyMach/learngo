@@ -8,6 +8,11 @@
 
 package main
 
+import (
+	"fmt"
+	"strings"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Wizard Printer
 //
@@ -30,4 +35,20 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	multArray := [4][3]string{
+		{"Albert", "Einstein", "time"},
+		{"Isaac", "Newton", "apple"},
+		{"Stephen", "Hawking", "blackhole"},
+		{"Marie", "Curie", "radium"},
+	}
+
+	fmt.Printf("%-15s%-15s%-15s\n", "First Name", "Last Name", "Nickname")
+	fmt.Printf("%s\n", strings.Repeat("=", 50))
+	for _, v := range multArray {
+		for _, element := range v {
+			fmt.Printf("%-15s", element)
+		}
+		fmt.Println()
+	}
+	fmt.Printf("%s", strings.Repeat("-", 50))
 }

@@ -8,6 +8,13 @@
 
 package main
 
+import (
+	"fmt"
+	"math/rand"
+	"os"
+	"time"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Moodly
 //
@@ -46,4 +53,26 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+
+	args := os.Args[1:]
+
+	if len(args) != 1 {
+		fmt.Print("go run main.go [your name]")
+		return
+	}
+
+	messages := []string{
+		"feels good 👍",
+		"feels bad 👎",
+		"feels sad 😞",
+		"feels happy 😀",
+		"feels awesome 😎",
+		"feels terrible 😩",
+	}
+
+	fmt.Print(len(messages))
+	rand.Seed(time.Now().UnixNano())
+	indexMessage := rand.Intn(len(messages))
+
+	fmt.Printf("%s %s", args[0], messages[indexMessage])
 }

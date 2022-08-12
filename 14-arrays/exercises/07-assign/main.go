@@ -8,6 +8,11 @@
 
 package main
 
+import (
+	"fmt"
+	"strings"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Assign the Arrays
 //
@@ -42,4 +47,21 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+
+	books := [3]string{"Kafka's Revenge", "Stay Golden", "Everythingship"}
+	upper := books
+	lower := books
+
+	for key, v := range upper {
+		upper[key] = strings.ToUpper(v)
+	}
+
+	for key, v := range lower {
+		lower[key] = strings.ToLower(v)
+	}
+
+	fmt.Printf("%#v\n", books)
+	fmt.Printf("%#v\n", upper)
+	fmt.Printf("%#v\n", lower)
+
 }
