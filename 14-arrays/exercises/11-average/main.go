@@ -8,6 +8,11 @@
 
 package main
 
+import (
+	"fmt"
+	"strconv"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Find the Average
 //
@@ -40,4 +45,25 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+
+	numbers := []int{1, 0, 2, 0, 3}
+	var result string
+	var sum int
+	if len(numbers) > 0 {
+		result += "Your numbers: ["
+	}
+	for i, v := range numbers {
+		sum += v
+		result += strconv.Itoa(v)
+
+		if i != len(numbers)-1 {
+			result += " "
+		}
+	}
+	if len(numbers) > 0 {
+		result = result + "]"
+		fmt.Println(result)
+		fmt.Printf("Average: %d", sum/len(numbers))
+	}
+
 }

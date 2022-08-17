@@ -8,5 +8,105 @@
 
 package main
 
+import "fmt"
+
 func main() {
+
+	zero := []string{
+		"███",
+		"█ █",
+		"█ █",
+		"█ █",
+		"███",
+	}
+
+	one := []string{
+		"██ ",
+		" █ ",
+		" █ ",
+		" █ ",
+		"███",
+	}
+
+	two := []string{
+		"███",
+		"  █",
+		"███",
+		"█  ",
+		"███",
+	}
+
+	three := []string{
+		"███",
+		"  █",
+		"███",
+		"  █",
+		"███",
+	}
+
+	four := []string{
+		"█ █",
+		"█ █",
+		"███",
+		"  █",
+		"  █",
+	}
+
+	five := []string{
+		"███",
+		"█  ",
+		"███",
+		"  █",
+		"███",
+	}
+
+	six := []string{
+		"███",
+		"█  ",
+		"███",
+		"█ █",
+		"███",
+	}
+
+	seven := []string{
+		"███",
+		"  █",
+		"  █",
+		"  █",
+		"  █",
+	}
+
+	eight := []string{
+		"███",
+		"█ █",
+		"███",
+		"█ █",
+		"███",
+	}
+
+	nine := []string{
+		"███",
+		"█ █",
+		"███",
+		"  █",
+		"███",
+	}
+
+	digits := [10][]string{
+		zero, one, two, three, four, five, six, seven, eight, nine,
+	}
+
+	var printableDigits [5]string
+
+	for _, num := range digits {
+		for index, line := range num {
+			fmt.Printf("%d\n", index)
+			printableDigits[index] += " " + line
+		}
+	}
+
+	for _, line := range printableDigits {
+		fmt.Printf("%s\n", line)
+	}
+
 }
