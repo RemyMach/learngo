@@ -69,5 +69,16 @@ func main() {
 
 	// ADD YOUR CODE BELOW:
 	// ...
+	lyric = append([]string(nil), lyric...)
 	fmt.Printf("%s\n", lyric)
+
+	lyric = append([]string{"yesterday"}, lyric...)
+
+	fmt.Printf("%s\n", lyric)
+
+	lyric = append(lyric, lyric[8:13]...)    // copie les valeurs dont on a besoin à la fin
+	lyric = append(lyric[:8], lyric[13:]...) // puis on les saute quand on recopie le tableau
+
+	fmt.Printf("%s\n", lyric)
+
 }

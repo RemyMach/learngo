@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"strconv"
+	"strings"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Slice the numbers
 //
@@ -57,6 +63,31 @@ package main
 // ---------------------------------------------------------
 
 func main() {
-	// uncomment the declaration below
-	// data := "2 4 6 1 3 5"
+	//uncomment the declaration below
+	data := "2 4 6 1 3 5"
+	dataSlices := strings.Split(data, " ")
+	var dataInt []int
+	var evens []int
+	var odds []int
+
+	for _, value := range dataSlices {
+		intValue, err := strconv.Atoi(value)
+		if err == nil {
+			if intValue%2 == 0 {
+				evens = append(evens, intValue)
+			} else {
+				odds = append(odds, intValue)
+			}
+			dataInt = append(dataInt, intValue)
+		}
+	}
+
+	fmt.Printf("nums %v\n", dataInt)
+	fmt.Printf("evens %v\n", evens)
+	fmt.Printf("odds %v\n", odds)
+	fmt.Printf("middle %v\n", dataInt[len(dataInt)/2-1:(len(dataInt)/2)+1])
+	fmt.Printf("first 2 %v\n", dataInt[:2])
+	fmt.Printf("last 2 %v\n", dataInt[len(dataInt)-2:])
+	fmt.Printf("evens last 1 %v\n", evens[len(evens)-1:])
+	fmt.Printf("odds last 2 %v\n", evens[len(odds)-1:])
 }

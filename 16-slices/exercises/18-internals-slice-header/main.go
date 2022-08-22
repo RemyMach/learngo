@@ -86,13 +86,18 @@ func main() {
 	// 1. allocate an array with 10 million int elements
 	//    the array's size will be equal to ~80MB
 	//    hint: use the `size` constant above.
+	var bigArray = [size]int{}
+	passArray(bigArray)
 
 	// 2. print the memory usage (use the report func).
+	report("\t> Memory Usage: ")
 
 	// 3. copy the array to a new array.
+	var arrayBuf = bigArray
+	passArray(arrayBuf)
 
 	// 4. print the memory usage
-
+	report("\t> Memory Usage: ")
 	// 5. pass the array to the passArray function
 
 	// 6. convert one of the arrays to a slice
