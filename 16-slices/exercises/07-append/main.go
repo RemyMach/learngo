@@ -8,6 +8,11 @@
 
 package main
 
+import (
+	"bytes"
+	"fmt"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Append
 //
@@ -30,4 +35,11 @@ func main() {
 	// 3. compare the slices using the bytes.Equal function
 
 	// 4. print whether they're equal or not
+	png, header := []byte{'P', 'N', 'G'}, []byte{}
+
+	header = append(header, png...)
+
+	if bytes.Equal(png, header) {
+		fmt.Println("They are equal")
+	}
 }
