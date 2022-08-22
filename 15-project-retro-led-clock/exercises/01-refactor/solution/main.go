@@ -10,9 +10,9 @@ package main
 
 import (
 	"fmt"
-	"time"
-
 	"github.com/inancgumus/screen"
+
+	"time"
 )
 
 func main() {

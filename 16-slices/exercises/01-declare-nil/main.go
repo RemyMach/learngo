@@ -8,6 +8,8 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Declare nil slices
 //
@@ -36,4 +38,15 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	var names []string
+	var distances []int
+	var data []uint8
+	var ratios []float64
+	var alives []bool
+
+	fmt.Printf("%T %d %t\n", names, len(names), names == nil)
+	fmt.Printf("%T %d %t\n", distances, len(distances), distances == nil)
+	fmt.Printf("%T %d %t\n", data, len(data), data == nil)
+	fmt.Printf("%T %d %t\n", ratios, len(ratios), ratios == nil)
+	fmt.Printf("%T %d %t", alives, len(alives), alives == nil)
 }
